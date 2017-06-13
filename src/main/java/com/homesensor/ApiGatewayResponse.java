@@ -1,4 +1,4 @@
-package com.serverless;
+package com.homesensor;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
