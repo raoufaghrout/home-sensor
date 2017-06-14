@@ -47,11 +47,11 @@ provider:
 
 # you can add packaging information here
 package:
-  artifact: build/distributions/hello.zip
+  artifact: build/distributions/home-sensor.zip
 
 functions:
-  hello:
-    handler: com.homesensor.Handler
+  weatherData:
+    handler: com.homesensor.WeatherDataHandler
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
