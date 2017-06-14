@@ -8,13 +8,13 @@ import static com.homesensor.builder.WeatherDataBuilder.data;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-public class WeatherDataToCSVTransformerTest {
+public class WeatherDataToCSVSerializerTest {
 
     @Test
     public void shouldTransformWeatherDataToCSV() {
-        WeatherDataToCSVTransformer weatherDataToCsvTransformer = new WeatherDataToCSVTransformer();
+        WeatherDataToCSVSerializer weatherDataToCsvSerializer = new WeatherDataToCSVSerializer();
 
-        String weatherDataAsCSV = weatherDataToCsvTransformer.transform(testWeatherData());
+        String weatherDataAsCSV = weatherDataToCsvSerializer.serialize(testWeatherData());
 
         assertThat(weatherDataAsCSV, is("London,20.66,1018,56,19,22"));
     }

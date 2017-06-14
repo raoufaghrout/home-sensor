@@ -2,9 +2,9 @@ package com.homesensor.util;
 
 import com.homesensor.model.WeatherData;
 
-public class WeatherDataToCSVTransformer {
+public class WeatherDataToCSVSerializer {
 
-    public String transform(WeatherData weatherData) {
+    public String serialize(WeatherData weatherData) {
 
         return weatherData.getName() +
                 "," +
