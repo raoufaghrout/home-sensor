@@ -4,11 +4,11 @@ import com.homesensor.model.Main;
 
 public class MainBuilder {
 
-    private Float temperature = 0f;
-    private Integer pressure = 0;
-    private Integer humidity = 0;
-    private Integer temperatureMinimum = 0;
-    private Integer temperatureMaximum = 0;
+    private Float temperature;
+    private Integer pressure;
+    private Integer humidity;
+    private Integer temperatureMinimum;
+    private Integer temperatureMaximum;
 
     public static MainBuilder main() {
         return new MainBuilder();

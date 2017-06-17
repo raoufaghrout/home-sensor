@@ -3,12 +3,10 @@ package com.homesensor.builder;
 import com.homesensor.model.WeatherData;
 import com.homesensor.model.Main;
 
-import static com.homesensor.builder.MainBuilder.main;
-
 public class WeatherDataBuilder {
 
-    private String name = "";
-    private Main main = main().build();
+    private String name;
+    private Main main;
 
     public static WeatherDataBuilder data() {
         return new WeatherDataBuilder();
