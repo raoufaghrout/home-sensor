@@ -1,11 +1,35 @@
 apply plugin: 'java'
+apply plugin: 'idea'
 
 repositories {
     mavenCentral()
 }
 
+sourceSets {
+    testIntegration {
+        java {
+            compileClasspath += main.output + test.output
+            runtimeClasspath += main.output + test.output
+            srcDir file('src/testIntegration/java')
+        }
+
+        resources.srcDir file('src/testIntegration/resources')
+    }
+}
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+
+configurations {
+    testIntegrationCompile.extendsFrom testCompile
+    testIntegrationRuntime.extendsFrom testRuntime
+}
+
+idea {
+    module {
+        testSourceDirs += file('src/testIntegration/java')
+    }
+}
 
 dependencies {
     compile (
@@ -31,6 +55,12 @@ task buildZip(type: Zip) {
     }
 }
 
+task testIntegration(type: Test) {
+    testClassesDir = sourceSets.testIntegration.output.classesDir
+    classpath = sourceSets.testIntegration.runtimeClasspath
+}
+
+build.dependsOn testIntegration
 build.dependsOn buildZip
 
 task wrapper(type: Wrapper) {
