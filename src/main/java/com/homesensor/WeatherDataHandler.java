@@ -2,6 +2,8 @@ package com.homesensor;
 
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
+import com.homesensor.model.ApiGatewayResponse;
+import com.homesensor.model.Response;
 import com.homesensor.util.JSONToWeatherDataDeserializer;
 import org.apache.log4j.Logger;
 

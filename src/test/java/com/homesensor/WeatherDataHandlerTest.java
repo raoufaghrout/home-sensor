@@ -1,6 +1,8 @@
 package com.homesensor;
 
 import com.amazonaws.services.lambda.runtime.Context;
+import com.homesensor.model.ApiGatewayResponse;
+import com.homesensor.model.Response;
 import com.homesensor.util.JSONToWeatherDataDeserializer;
 import org.junit.Test;
 import org.junit.runner.RunWith;

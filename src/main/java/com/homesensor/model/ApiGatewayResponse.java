@@ -1,4 +1,4 @@
-package com.homesensor;
+package com.homesensor.model;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
