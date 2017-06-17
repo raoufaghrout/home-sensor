@@ -7,7 +7,6 @@ import java.io.IOException;
 
 public class JSONToWeatherDataDeserializer {
 
-
     public WeatherData deserialize(String jsonWeatherData) {
         ObjectMapper objectMapper = new ObjectMapper();
 

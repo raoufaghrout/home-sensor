@@ -126,4 +126,36 @@ public class ApiGatewayResponse {
 			return new ApiGatewayResponse(statusCode, body, headers, base64Encoded);
 		}
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		ApiGatewayResponse that = (ApiGatewayResponse) o;
+
+		if (statusCode != that.statusCode) return false;
+		if (isBase64Encoded != that.isBase64Encoded) return false;
+		if (body != null ? !body.equals(that.body) : that.body != null) return false;
+		return headers != null ? headers.equals(that.headers) : that.headers == null;
+	}
+
+	@Override
+	public int hashCode() {
+		int result = statusCode;
+		result = 31 * result + (body != null ? body.hashCode() : 0);
+		result = 31 * result + (headers != null ? headers.hashCode() : 0);
+		result = 31 * result + (isBase64Encoded ? 1 : 0);
+		return result;
+	}
+
+	@Override
+	public String toString() {
+		return "ApiGatewayResponse{" +
+				"statusCode=" + statusCode +
+				", body='" + body + '\'' +
+				", headers=" + headers +
+				", isBase64Encoded=" + isBase64Encoded +
+				'}';
+	}
 }
